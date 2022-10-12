@@ -9,13 +9,14 @@ class MyKeyboardListener(Widget):
     def __init__(self, **kwargs):
         super(MyKeyboardListener, self).__init__(**kwargs)
         self._keyboard = Window.request_keyboard(
-            self.k,self, 'text')#requested a keyboard
+            self.l,self, 'tet')#requested a keyboard first function is what will be triggered when release is pressed
         if self._keyboard.widget:
             # If it exists, this widget is a VKeyboard object which you can use
             # to change the keyboard layout.
             pass
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
-
+    def l(self):
+        print("yeeee")
     def k(self):
         print('My keyboard have been closed!')
         self._keyboard.unbind(on_key_down=self._on_keyboard_down)
@@ -30,7 +31,7 @@ class MyKeyboardListener(Widget):
         # If we hit escape, release the keyboard
         if keycode[1]=='escape':
             print("steve")
-            keyboard.k() #Unbinds keyboard
+            keyboard.release() #calls first function in request command
 
         # Return True to accept the key. Otherwise, it will be used by
         # the system.
