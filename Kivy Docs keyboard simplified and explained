@@ -16,7 +16,7 @@ class MyKeyboardListener(Widget):
             pass
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
     def l(self):
-        print("yeeee")
+        print("yes")
     def k(self):
         print('My keyboard have been closed!')
         self._keyboard.unbind(on_key_down=self._on_keyboard_down)
